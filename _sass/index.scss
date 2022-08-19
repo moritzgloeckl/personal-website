@@ -1,0 +1,84 @@
+.index-page {
+	.selfie {
+		width: 125px;
+		margin-bottom: 25px;
+		border-radius: 100%;
+		opacity: 1;
+		box-shadow: 0 0px 4px 0 rgba(0,0,0,0.18), 0 0px 12px 0 rgba(0,0,0,0.15);
+		vertical-align: middle;
+		border: 1px solid #d6d6d6;
+	}
+
+	.subtitle {
+		font-size: 1.85rem;
+		font-weight: 300;
+		font-style: normal;
+		font-family: 'Open Sans', sans-serif;
+		color: #aaa;
+		width: 70%;
+		margin: 16px auto 16px;
+	}
+
+	.email {
+		font-size: 1.85rem;
+		font-weight: 300;
+		font-family: monospace;
+		opacity: 0;
+		transition: 0.8s ease;
+		color: #aaa;
+		display: block;
+	}
+
+	.footer {
+		display: flex;
+		flex-direction: row;
+		margin-top:  16px;
+	}
+
+	.flag {
+		height: 24px;
+		width: auto;
+	}
+
+	.legal {
+		position: sticky;
+		top: calc( 100vh - 50px );
+		margin-top: 16px;
+		color: #aaa;
+
+		a {
+			text-decoration: none;
+			font-family: 'Open Sans', sans-serif;
+		}
+
+		.spacer {
+			margin-left: 32px;
+			margin-right: 32px;
+		}
+	}
+
+	@media only screen and (max-width: 600px) {
+		.subtitle {
+			line-height: 1.2;
+		}
+
+		.email {
+			font-size: 1.2rem;
+		}
+
+		h1#title {
+			font-size: 3rem;
+		}
+
+		.legal {
+			a {
+				display: block;
+			}
+			.spacer {
+				display: block;
+				margin: unset;
+				margin-bottom: 8px;
+			}
+		} 
+	}
+}

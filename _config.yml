@@ -1,0 +1,11 @@
+title: Moritz Glöckl
+tagline: IT Consultant & Software Developer
+
+# Build settings
+markdown: kramdown
+
+sass:
+  sass_dir: _sass
+  style: :compressed
+
+exclude: [README.md]

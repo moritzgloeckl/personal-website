@@ -1,0 +1,111 @@
+@font-face {
+  font-family: Poppins;
+  src: url(../assets/fonts/Poppins-SemiBold.woff2);
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url(../assets/fonts/OpenSans-Light.woff2);
+}
+
+@font-face {
+  font-family: 'icons';
+  src: url(../assets/fonts/icons.woff2);
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: rgb(252,252,255);
+  background: radial-gradient(circle, rgba(252,252,255,1) 0%, rgba(246,246,246,1) 100%);
+  line-height: 1;
+  font-size: 16px;
+  color: #222;
+}
+
+h1, h2 {
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+h1.title {
+  font-size: 4rem;
+  margin-bottom: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+
+a {
+  color: #aaa;
+  transition: 1s ease;
+  cursor: pointer;
+
+  :hover {
+    color: #222;
+  }
+}
+
+.hide {
+  display: none;
+}
+
+::selection {
+	background: #CDCDCD;
+}
+
+::-moz-selection {
+	background: #CDCDCD;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+@media only screen and (max-width: 600px) {
+  .wrapper {
+    padding: 16px;
+  }
+}
+
+.ic {
+	font-size: 2.2rem;
+	padding: 25px;
+	font-weight: 900;
+}
+
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: 900;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-keybase:before { content: '\e800'; }
+.icon-at:before { content: '\e801'; }
+.icon-twitter:before { content: '\f099'; }
+.icon-github-circled:before { content: '\f09b'; }
+.icon-certificate:before { content: '\f0a3'; }

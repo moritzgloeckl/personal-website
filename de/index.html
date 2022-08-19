@@ -1,0 +1,40 @@
+---
+layout: default
+pageName: index
+---
+
+<div class="wrapper">
+	<img class="selfie" alt="{{ site.title }}" src="../assets/me.png">
+
+	<h1 id="title" class="title">{{ site.title }}</h1>
+
+	<h2 class="subtitle">IT Consultant & Software Entwickler aus <a href="https://de.wikipedia.org/wiki/%C3%96sterreich" alt="Österreich" target="_blank"><img class="flag" src="../assets/flag_austria.png" height="32" alt="Österreich"/></a></h2>
+
+	<div id="email" class="email">moritz <span class="hide">no-spam-pls</span> (at) <span class="hide">no-spam-pls</span> gloeckl <span class="hide">no-spam-pls</span> (punkt) <span class="hide">no-spam-pls</span> me</div>
+
+	<div class="footer">
+		<a href="https://github.com/moritzgloeckl" alt="Github" target="_blank"><i class="ic icon-github-circled"></i></a>
+		<a href="https://keybase.io/moritzg" alt="Keybase" target="_blank"><i class="ic icon-keybase"></i></a>
+		<a href="./assets/public_key.asc" alt="GPG Public Key" target="_blank"><i class="ic icon-certificate"></i></a>
+		<a href="https://twitter.com/moritzgloeckl" alt="Twitter" target="_blank"><i class="ic icon-twitter"></i></a>
+		<a onclick="toggleEmail()" alt="Email"><i class="ic icon-at"></i></a>
+	</div>
+
+	<div class="legal">
+		<a href="/de/legal" alt="Impressum">Impressum</a>
+		<span class="spacer"></span>
+		<a href="/de/privacy" alt="Datenschutz">Datenschutz</a>
+	</div>
+</div>
+
+<script type="text/javascript">
+	// Function to show and hide the email address.
+	function toggleEmail() {
+		var email = document.getElementById("email");
+		if (email.style.opacity !== "1") {
+			email.style.opacity = "1";
+		} else {
+			email.style.opacity = "0";
+		}
+	}
+</script>
