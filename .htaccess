@@ -1,23 +1,26 @@
+RewriteEngine on
+
 # Set Language to German (de) if language header contains de 
 RewriteCond %{HTTP:Accept-Language} ^((?!en).)*de.*$ [NC]
 RewriteRule .* - [E=REQ_LANG:de]
 
 # Set Language to English (en) per default
-RewriteCond %{HTTP:Accept-Language} !^.*(de).*$ [NC]
+# RewriteCond %{HTTP:Accept-Language} !^.*(de).*$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule .* - [E=REQ_LANG:en]
 
+# Redirect Error sites to custom errors
 ErrorDocument 401 /%{ENV:REQ_LANG}/404
 ErrorDocument 403 https://%{HTTP_HOST}/%{ENV:REQ_LANG}/404
 ErrorDocument 404 https://%{HTTP_HOST}/%{ENV:REQ_LANG}/404
 ErrorDocument 500 https://%{HTTP_HOST}/%{ENV:REQ_LANG}/404
-
-RewriteEngine on
 
 # Redirect www and http to https - non-www
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} ^www\. [NC]
 RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
 RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+Header set Strict-Transport-Security: "max-age=31536000; includeSubDomains; preload"
 
 # Remove file extensions
 RewriteCond %{REQUEST_FILENAME} !-d
@@ -29,5 +32,6 @@ RewriteCond %{HTTP:Accept-Language} ^((?!en).)*de.*$ [NC]
 RewriteRule ^$ https://%{HTTP_HOST}/de/ [R,L]
  
 # Default Language redirect (en)
-RewriteCond %{HTTP:Accept-Language} !^.*(de).*$ [NC]
+# RewriteCond %{HTTP:Accept-Language} !^.*(de).*$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^$ https://%{HTTP_HOST}/en/ [R,L]
