@@ -10,14 +10,16 @@ pageName: index
 
 	<h2 class="subtitle">IT Consultant & Software Entwickler aus <a href="https://de.wikipedia.org/wiki/%C3%96sterreich" alt="Österreich" target="_blank"><img class="flag" src="../assets/flag_austria.png" height="32" alt="Österreich"/></a></h2>
 
-	<div id="email" class="email">moritz <span class="hide">no-spam-pls</span> (at) <span class="hide">no-spam-pls</span> gloeckl <span class="hide">no-spam-pls</span> (punkt) <span class="hide">no-spam-pls</span> me</div>
+	<div id="hideable-spacer"></div>
+	<div id="email" class="email hideable">moritz <span class="hide">no-spam-pls</span> (at) <span class="hide">no-spam-pls</span> gloeckl <span class="hide">no-spam-pls</span> (punkt) <span class="hide">no-spam-pls</span> me</div>
+	<div id="gpg" class="gpg hideable">SHA256: 2e65c952<wbr>4eb25add<wbr>ebe7551c<wbr>dad6528c<wbr>f9d50811<wbr>ae814cff<wbr>98c1607b<wbr>e7cfe140<wbr></div>
 
 	<div class="footer">
 		<a href="https://github.com/moritzgloeckl" alt="Github" target="_blank"><i class="ic icon-github-circled"></i></a>
 		<a href="https://keybase.io/moritzg" alt="Keybase" target="_blank"><i class="ic icon-keybase"></i></a>
-		<a href="/assets/public_key.asc" alt="GPG Public Key" target="_blank"><i class="ic icon-certificate"></i></a>
+		<a onclick="toggleHidden('gpg')" href="/assets/Moritz_Gloeckl.asc" alt="GPG Public Key" target="_blank"><i class="ic icon-certificate"></i></a>
 		<a href="https://twitter.com/moritzgloeckl" alt="Twitter" target="_blank"><i class="ic icon-twitter"></i></a>
-		<a onclick="toggleEmail()" alt="Email"><i class="ic icon-at"></i></a>
+		<a onclick="toggleHidden('email')" alt="Email"><i class="ic icon-at"></i></a>
 	</div>
 
 	<div class="legal">
@@ -27,14 +29,4 @@ pageName: index
 	</div>
 </div>
 
-<script type="text/javascript">
-	// Function to show and hide the email address.
-	function toggleEmail() {
-		var email = document.getElementById("email");
-		if (email.style.opacity !== "1") {
-			email.style.opacity = "1";
-		} else {
-			email.style.opacity = "0";
-		}
-	}
-</script>
+{% include js-hide.html %}

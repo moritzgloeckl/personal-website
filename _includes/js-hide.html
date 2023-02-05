@@ -1,0 +1,19 @@
+<script type="text/javascript">
+	// Function to show and hide hidden infos.
+	function toggleHidden(type) {
+		var hideables = document.getElementsByClassName("hideable");
+
+		for(var i = 0; i < hideables.length; i++){
+			if (hideables[i].id !== type) {
+				hideables[i].style.opacity = "0";
+			}
+		}
+
+		var info = document.getElementById(type);
+		if (info.style.opacity !== "1") {
+			info.style.opacity = "1";
+		} else {
+			info.style.opacity = "0";
+		}
+	}
+</script>
